@@ -5,12 +5,17 @@ struct MonthView: View {
     let month: Date
 
     var body: some View {
-        LazyVGrid(columns: createGridColumns(), spacing: 10) {
-            ForEach(0..<numberOfDaysInMonth(), id: \.self) { day in
-                Text("\(day + 1)")
+        VStack {
+            Text(monthTitle(for: month))
+                .font(.largeTitle)
+
+            LazyVGrid(columns: createGridColumns(), spacing: 10) {
+                ForEach(0..<numberOfDaysInMonth(), id: \.self) { day in
+                    Text("\(day + 1)")
+                }
             }
+            .padding()
         }
-        .padding()
     }
 
     private func createGridColumns() -> [GridItem] {
@@ -21,7 +26,14 @@ struct MonthView: View {
         let range = calendar.range(of: .day, in: .month, for: month)!
         return range.count
     }
+
+    private func monthTitle(for date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM yyyy"
+        return formatter.string(from: date)
+    }
 }
+
 
 
 struct InfiniteCalendarView: View {
