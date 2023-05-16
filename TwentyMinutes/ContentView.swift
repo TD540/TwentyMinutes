@@ -1,13 +1,6 @@
-//
-//  ContentView.swift
-//  TwentyMinutes
-//
-//  Created by Thomas Decrick on 15/05/2023.
-//
-
 import SwiftUI
 
-struct CalendarMonthView: View {
+struct MonthView: View {
     let calendar: Calendar = Calendar.current
     let month: Date
 
@@ -31,27 +24,34 @@ struct CalendarMonthView: View {
 }
 
 
-struct CalendarYearView: View {
-    let calendar: Calendar = Calendar.current
-    let startDate: Date
-    let yearCount: Int
+struct InfiniteCalendarView: View {
+    @State private var months = [Date()]
+    private let calendar = Calendar.current
 
     var body: some View {
-        ScrollView(.vertical) {
-            LazyVStack(spacing: 20) {
-                ForEach(0..<yearCount) { index in
-                    CalendarMonthView(month: calendar.date(byAdding: .month, value: index, to: startDate)!)
-                        .id(index)
+        ScrollView {
+            LazyVStack {
+                ForEach(months.indices, id: \.self) { index in
+                    MonthView(month: months[index])
+                        .onAppear {
+                            if index == months.count - 1 {
+                                let nextMonth = calendar.date(byAdding: .month, value: 1, to: months[index])!
+                                months.append(nextMonth)
+                            } else if index == 0 {
+                                let previousMonth = calendar.date(byAdding: .month, value: -1, to: months[index])!
+                                months.insert(previousMonth, at: 0)
+                            }
+                        }
                 }
             }
-            .padding()
         }
     }
 }
 
+
 struct ContentView: View {
     var body: some View {
-        CalendarYearView(startDate: Date(), yearCount: 5)
+        InfiniteCalendarView()
     }
 }
 
@@ -60,3 +60,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
