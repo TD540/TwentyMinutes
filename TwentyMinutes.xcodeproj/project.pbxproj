@@ -11,6 +11,8 @@
 		DCA11B7C2A126F2E00698F64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA11B7B2A126F2E00698F64 /* ContentView.swift */; };
 		DCA11B7E2A126F3000698F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA11B7D2A126F3000698F64 /* Assets.xcassets */; };
 		DCA11B822A126F3000698F64 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA11B812A126F3000698F64 /* Preview Assets.xcassets */; };
+		DCD2D0B52A1362540088B3F3 /* MonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2D0B42A1362540088B3F3 /* MonthView.swift */; };
+		DCD2D0B72A13628E0088B3F3 /* InfiniteCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD2D0B62A13628E0088B3F3 /* InfiniteCalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		DCA11B7D2A126F3000698F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCA11B7F2A126F3000698F64 /* TwentyMinutes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TwentyMinutes.entitlements; sourceTree = "<group>"; };
 		DCA11B812A126F3000698F64 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DCD2D0B42A1362540088B3F3 /* MonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthView.swift; sourceTree = "<group>"; };
+		DCD2D0B62A13628E0088B3F3 /* InfiniteCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteCalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				DCA11B792A126F2E00698F64 /* TwentyMinutesApp.swift */,
 				DCA11B7B2A126F2E00698F64 /* ContentView.swift */,
+				DCD2D0B62A13628E0088B3F3 /* InfiniteCalendarView.swift */,
+				DCD2D0B42A1362540088B3F3 /* MonthView.swift */,
 				DCA11B7D2A126F3000698F64 /* Assets.xcassets */,
 				DCA11B7F2A126F3000698F64 /* TwentyMinutes.entitlements */,
 				DCA11B802A126F3000698F64 /* Preview Content */,
@@ -139,7 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD2D0B72A13628E0088B3F3 /* InfiniteCalendarView.swift in Sources */,
 				DCA11B7C2A126F2E00698F64 /* ContentView.swift in Sources */,
+				DCD2D0B52A1362540088B3F3 /* MonthView.swift in Sources */,
 				DCA11B7A2A126F2E00698F64 /* TwentyMinutesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
